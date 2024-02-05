@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-
+const username = "";
 function verifyJWT(req, res, next) {
   const token = req.headers["authorization"]?.split(" ")[1]; //can change authorization to x-access-token
 
@@ -13,6 +13,7 @@ function verifyJWT(req, res, next) {
       req.user = {};
       req.user.id = decoded.id;
       req.user.username = decoded.username;
+
       next();
     });
   } else {

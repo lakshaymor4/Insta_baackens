@@ -19,8 +19,13 @@ const userSchema = mongoose.Schema({
     required: true,
   },
   dateofbirth: {
-    type: Number,
+    type: String,
     required: true,
+  },
+  profile: {
+    type: String,
+    default:
+      "https://ik.imagekit.io/lakshay/default_profile.jpg?updatedAt=1704866851198",
   },
 });
 const User = mongoose.model("User", userSchema);
