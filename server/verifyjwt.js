@@ -15,6 +15,7 @@ function verifyJWT(req, res, next) {
       req.user.username = decoded.username;
 
       next();
+      return req.user.username, req.user.id;
     });
   } else {
     res.json({ message: "Incorrect Token Given", isLoggedIn: false });
