@@ -3,8 +3,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv");
 const app = express();
+dotenv.config();
 
 app.use(cors());
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
